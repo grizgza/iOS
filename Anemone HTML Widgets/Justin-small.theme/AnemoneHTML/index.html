@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>Justin Small</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<script type="text/javascript" charset="utf-8" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="scripts.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700" rel="stylesheet">
+
+<style>
+
+body {
+	margin: 0;
+	/*padding: 400px 40px 0 32px;*/
+	padding: 500px 30px 0 30px;
+	text-shadow: 1px 1px 0px rgba(55,55,55,0.2);
+	font-weight: 400;
+	color: #fff;
+	font-family: 'Ubuntu', san-serif;
+	background: transparent;
+}
+h3 {
+	padding: 0;
+	margin: 2px 0 4px 0;
+	font-size: 16px;
+	font-weight: 400;
+}
+.progress {
+  width: 315px;
+  height: 100%;
+}
+.progress-wrap {
+  background: #dcdcdc;
+  margin: 8px 0 6px 0;
+  overflow: hidden;
+  position: relative;
+  clear: both;
+  float: left;
+}
+.progress-bar {
+    background: #249c23;
+    left: 0;
+    position: absolute;
+    top: 0;
+	width:0%;
+}
+#progressBar {
+	height: 3px;
+	width: 315px;
+}
+#dayofweek {
+	text-transform: uppercase;
+	margin-bottom: -10px;
+	font-weight: 700;
+}
+#month, #day {
+	text-transform: uppercase;
+	font-weight: 300;
+}
+#day {
+	color: #00aeff;
+	font-weight: 700;
+	margin-left: 5px;
+}
+#paypal {
+	background: url(paypal.png) 0 2px no-repeat;
+	background-size: 16px 16px;
+	padding-left: 19px;
+}
+#ethereum {
+	background: url(eth.png) 0 2px no-repeat;
+	background-size: 16px 16px;
+	padding-left: 16px;
+}
+#balanceDollars {
+	background: url(nanopool.png) 0 2px no-repeat;
+	background-size: 16px 16px;
+	padding-left: 19px;
+}
+#arrow {
+	padding-left: 12px;
+	margin-left: 3px;
+	font-size: 11px;
+}
+.arrowUp {
+	background: url(arrow-up.png) 0 2px no-repeat;
+	background-size: 10px 10px;
+}
+.arrowDown {
+	background: url(arrow-down.png) 0 2px no-repeat;
+	background-size: 10px 10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+	<div style="width: 25%; float: left; text-align: left;">
+		<span id="paypal"></span>
+	</div>
+	
+	<div style="width: 50%; float: left; text-align: center;">	
+		<span id="ethereum"></span>
+		<span id="arrow"></span>
+	</div>
+	
+	<div style="width: 25%; float: right; text-align: right;">
+		<span id="balanceDollars"></span>
+	</div>
+
+	<div id="progressBar" class="progress-wrap progress"
+	  data-height="3px"
+	  data-width="315px"
+	  data-speed="1500"
+	  data-color="00aeff">
+	  <div class="progress-bar progress"></div>
+	</div>
+
+</body>
+</html>
