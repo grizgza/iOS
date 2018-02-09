@@ -1,15 +1,21 @@
 $(document).ready(function(){
     
+	$.ajaxSetup({
+	    beforeSend: function(xhr) {
+	        xhr.setRequestHeader('x-my-custom-header', 'Access-Control-Allow-Origin: *');
+	    }
+	});    
+    
     function reload_js(src) {
         $('script[src="' + src + '"]').remove();
         $('<script>').attr('src', src).appendTo('head');
     }
 	
-	var delayInMilliseconds = 100000;
+	var delayInMilliseconds = 10000;
 	
 	setTimeout(function() {
 	    
-	    reload_js('scripts.js');
+	    reload_js('[URL FOR THIS FILE]');
 	
 	}, delayInMilliseconds);
 
@@ -155,8 +161,8 @@ $(document).ready(function(){
 	  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 	];
 	
-	var dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri",
-	  "Sat"
+	var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+	  "Saturday"
 	];
 	
 	var d = new Date();
@@ -165,9 +171,9 @@ $(document).ready(function(){
 	
 	var theday = d.getDate();
 	
-	if (theday < 10) {
-		theday = '0'+theday;
-	}
+	function nth(n){return["st","nd","rd"][((n+90)%100-10)%10-1]||"th"}
+	
+	theday = (theday+nth(theday));
 	
 	$('#day').html(theday);
 	$('#year').html(d.getFullYear());
